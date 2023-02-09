@@ -12,8 +12,9 @@ var searchBtn=document.querySelector("#search-btn")
 searchBtn.addEventListener('click', function setQuery(e) {
     e.preventDefault()
     var searchResult = getLocation.value
-    getGeoLocation(searchResult);
     getInfo();
+    getGeoLocation(searchResult);
+   
 });
 //Get lat and lon
 var getGeoLocation = function (searchResult) {
