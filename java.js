@@ -18,7 +18,7 @@ searchBtn.addEventListener('click', function setQuery(e) {
 });
 //Get lat and lon
 var getGeoLocation = function (searchResult) {
-    var geoCode = 'http://api.openweathermap.org/geo/1.0/direct?q=' + searchResult + '&appid=' + key;
+    var geoCode = 'https://api.openweathermap.org/geo/1.0/direct?q=' + searchResult + '&appid=' + key;
     fetch(geoCode)
         .then(function (response) {
             return response.json();
@@ -34,7 +34,7 @@ var getGeoLocation = function (searchResult) {
 }
 
 var getForecast = function (lat, lon) {
-    var weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + key+'&units=imperial';
+    var weatherURL = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + lat + '&lon=' + lon + '&appid=' + key+'&units=imperial';
     fetch(weatherURL)
         .then(function (response) {
          return response.json();
@@ -54,7 +54,7 @@ var getForecast = function (lat, lon) {
                 document.getElementById("day"+(i+1)+"W").innerHTML="Wind: "+Number(data.list[i].wind.speed).toFixed(0)+" mph"
             }
             for(i=0;i<5;i++){
-                document.getElementById("img"+(i+1)).src="http:openweathermap.org/img/wn/"+data.list[i].weather[0].icon+".png";
+                document.getElementById("img"+(i+1)).src="https:openweathermap.org/img/wn/"+data.list[i].weather[0].icon+".png";
                 }
             
             
